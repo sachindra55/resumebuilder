@@ -1,0 +1,1130 @@
+/* Base animations */
+@keyframes gradientBg {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* Common gradients */
+:root {
+  --gradient-primary: linear-gradient(135deg, #4299E1 0%, #63B3ED 100%);
+  --gradient-light: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(240, 249, 255, 0.95) 100%);
+  --gradient-hover: linear-gradient(135deg, rgba(235, 244, 255, 0.9) 0%, rgba(225, 239, 255, 0.9) 100%);
+  --gradient-background: linear-gradient(-45deg, #64B5F6 0%, #E1BEE7 25%, #81D4FA 50%, #B2EBF2 75%, #64B5F6 100%);
+  --shadow-sm: 0 2px 4px rgba(66, 153, 225, 0.1);
+  --shadow-md: 0 4px 6px rgba(66, 153, 225, 0.15);
+  --shadow-lg: 0 6px 8px rgba(66, 153, 225, 0.2);
+  --border-blue: rgba(66, 153, 225, 0.2);
+}
+
+/* Colors - Darker text colors */
+:root {
+  --color-text-primary: #111827;    /* Even darker */
+  --color-text-secondary: #1f2937;  /* Darker secondary */
+  --color-text-light: #374151;      /* Darker light text */
+  --color-primary: #2563eb;         /* Darker blue */
+  --color-primary-dark: #1d4ed8;    /* Darker primary */
+  --color-white: #ffffff;
+  --form-bg-opacity: 0.98;          /* More opaque background */
+}
+
+/* Main container */
+.app-container {
+  @apply min-h-screen relative overflow-hidden;
+  background: var(--gradient-background);
+  background-size: 400% 400%;
+  animation: gradientBg 15s ease infinite;
+}
+
+/* Layout components */
+.form-section {
+  @apply w-1/2 min-h-[calc(100vh-4rem)] overflow-y-auto px-4 py-8;
+  background: rgba(255, 255, 255, 0.99);
+  color: #000000;
+}
+
+.form-section h2 {
+  @apply text-xl mb-4;
+  color: #000000;
+  font-weight: 700;
+}
+
+.form-section label,
+.form-section .label-text {
+  color: #000000;
+  font-weight: 600;
+}
+
+.preview-section {
+  @apply w-1/2 fixed right-0 top-16 h-[calc(100vh-4rem)] overflow-y-auto;
+  background: var(--gradient-light);
+  backdrop-filter: blur(10px);
+}
+
+.header-fixed {
+  @apply fixed top-0 left-0 right-0 z-50;
+  background: var(--gradient-light);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border-blue);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Section styling */
+.section {
+  @apply mb-8 p-6 rounded-lg;
+  background: rgba(255, 255, 255, 0.98);
+  border: 1px solid var(--color-text-light);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.section:hover {
+  background: var(--gradient-hover);
+  box-shadow: var(--shadow-md);
+}
+
+.section-title {
+  @apply text-lg mb-3;
+  color: #000000;
+  font-weight: 700;
+}
+
+.section h3,
+.section h4 {
+  color: #000000;
+  font-weight: 700;
+}
+
+/* Navigation */
+.nav-button {
+  @apply px-4 py-2 rounded-lg text-gray-600 transition-all duration-300;
+  background: var(--gradient-light);
+  color: var(--color-text-secondary);
+  font-weight: 600;
+  box-shadow: var(--shadow-sm);
+}
+
+.nav-button:hover {
+  background: var(--gradient-hover);
+  color: var(--color-primary);
+  box-shadow: var(--shadow-md);
+}
+
+.nav-button.active {
+  background: var(--gradient-primary);
+  color: var(--color-white);
+  font-weight: 700;
+  box-shadow: var(--shadow-lg);
+}
+
+/* Form elements */
+.input-field {
+  @apply px-4 py-2 rounded-lg w-full border transition-all duration-300;
+  background: var(--color-white);
+  border: 1px solid var(--color-text-secondary);
+  color: #000000;
+  font-weight: 500;
+}
+
+.input-field::placeholder {
+  color: #333333;
+  font-weight: 500;
+}
+
+.input-field:focus {
+  @apply outline-none;
+  border-color: var(--color-primary);
+  background: var(--color-white);
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.15);
+}
+
+/* Buttons */
+.btn-primary {
+  @apply px-4 py-2 rounded-lg transition-all duration-300;
+  background: var(--gradient-primary);
+  color: var(--color-white);
+  font-weight: 600;
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 100%);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-lg);
+}
+
+.btn-secondary {
+  @apply px-4 py-2 rounded-lg transition-all duration-300;
+  background: var(--gradient-light);
+  color: var(--color-text-primary);
+  font-weight: 600;
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-secondary:hover {
+  background: var(--gradient-hover);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Meta information */
+.experience-meta,
+.education-meta,
+.certification-meta {
+  color: var(--color-text-secondary);
+  font-weight: 600;
+}
+
+/* Typography */
+h1, h2, h3, h4 {
+  color: var(--color-text-primary);
+  font-weight: 600;
+}
+
+label, .label-text {
+  color: var(--color-text-primary);
+  font-weight: 500;
+}
+
+.meta-text {
+  color: var(--color-text-secondary);
+  font-weight: 600;
+}
+
+/* Pro badge */
+.pro-badge {
+  background: var(--gradient-primary);
+  color: var(--color-white);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Scrollbar styling */
+.form-section::-webkit-scrollbar {
+  width: 8px;
+}
+
+.form-section::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.form-section::-webkit-scrollbar-thumb {
+  background: var(--color-text-light);
+  border-radius: 4px;
+}
+
+.form-section::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-secondary);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .form-section,
+  .preview-section {
+    @apply w-full relative;
+  }
+  
+  .preview-section {
+    @apply hidden;
+  }
+}
+
+/* Base styles */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .btn-primary {
+    @apply px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors;
+  }
+
+  .btn-secondary {
+    @apply px-4 py-2 bg-white text-gray-800 rounded-lg border border-gray-200 
+           hover:bg-gray-50 hover:border-gray-300 transition-all;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-2 border border-gray-200 rounded-lg focus:ring-2 
+           focus:ring-blue-500 focus:border-transparent outline-none transition-all;
+  }
+
+  .card {
+    @apply bg-white rounded-lg shadow-sm p-6 border border-gray-100;
+  }
+
+  .section-title {
+    @apply text-xl font-semibold mb-6 flex items-center gap-2;
+  }
+}
+
+/* Hide scrollbar but keep functionality */
+.hide-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Form container */
+.form-container {
+  @apply flex flex-col gap-6 max-w-2xl mx-auto;
+  height: calc(100vh - 2rem);
+}
+
+/* Smooth scroll container */
+.smooth-scroll-container {
+  @apply relative;
+  height: calc(100vh - 8rem);
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  scroll-padding-top: 1rem;
+}
+
+/* Navigation */
+.nav-container {
+  @apply sticky top-0 z-30 pb-4 bg-opacity-90;
+  background: rgba(17, 24, 39, 0.95);
+  backdrop-filter: blur(10px);
+}
+
+.nav-button {
+  @apply px-4 py-2 rounded-lg text-gray-400 hover:text-white hover:bg-gray-800 transition-all;
+}
+
+.nav-button:hover {
+  @apply bg-gray-50 text-gray-900;
+}
+
+.nav-button.active {
+  @apply bg-gray-800 text-white;
+}
+
+/* Sections */
+.section {
+  @apply mb-8 p-6 rounded-lg backdrop-blur-sm;
+  background: linear-gradient(135deg,
+    rgba(255, 255, 255, 0.95) 0%,
+    rgba(248, 250, 252, 0.95) 100%
+  );
+  border: 1px solid rgba(66, 153, 225, 0.2);
+  box-shadow: 0 4px 6px rgba(66, 153, 225, 0.1);
+  transition: all 0.3s ease;
+}
+
+.section:hover {
+  background: linear-gradient(135deg,
+    rgba(255, 255, 255, 0.98) 0%,
+    rgba(240, 249, 255, 0.98) 100%
+  );
+  border: 1px solid rgba(66, 153, 225, 0.3);
+  box-shadow: 0 8px 12px rgba(66, 153, 225, 0.15);
+}
+
+/* Form elements */
+.form-group {
+  @apply space-y-4;
+}
+
+.skill-tag {
+  @apply inline-flex items-center gap-2 px-3 py-1 bg-gray-100 
+         text-gray-700 rounded-full text-sm hover:bg-gray-200 transition-colors;
+}
+
+/* Resume Preview Styles */
+.resume-preview {
+  @apply p-12 max-w-4xl mx-auto bg-white;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  letter-spacing: -0.01em;
+}
+
+.resume-header {
+  @apply mb-8 pb-6 text-center;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.resume-header h1 {
+  @apply text-4xl font-bold text-gray-900 mb-2;
+  letter-spacing: -0.025em;
+}
+
+.resume-header .title {
+  @apply text-xl text-blue-600 font-medium mb-6;
+}
+
+.resume-header .contact-info {
+  @apply flex justify-center items-center flex-wrap;
+}
+
+.contact-item {
+  @apply flex items-center gap-2 text-gray-600 whitespace-nowrap;
+}
+
+.contact-item svg {
+  @apply text-gray-500 flex-shrink-0;
+}
+
+.social-links {
+  @apply flex justify-center gap-3 mt-4;
+}
+
+.resume-section {
+  @apply mb-10 last:mb-0;
+}
+
+.section-title {
+  @apply text-lg font-semibold text-gray-900 mb-6 pb-2 flex items-center gap-2;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.section-title svg {
+  @apply text-blue-600;
+}
+
+.experience-item, .education-item {
+  @apply mb-8 last:mb-0;
+}
+
+.experience-item h3, .education-item h3 {
+  @apply text-lg font-semibold text-gray-900 mb-1;
+}
+
+.experience-meta, .education-meta {
+  @apply flex items-center gap-3 text-sm text-gray-600 mb-3;
+}
+
+.meta-divider {
+  @apply w-1 h-1 rounded-full bg-gray-400;
+}
+
+.experience-description {
+  @apply text-sm text-gray-700 leading-relaxed mb-3;
+}
+
+.experience-bullets {
+  @apply space-y-1 text-sm text-gray-700;
+}
+
+.experience-bullets li {
+  @apply leading-relaxed;
+}
+
+.bullet-input-container {
+  @apply flex items-start gap-2;
+}
+
+.bullet-input {
+  @apply flex-1 input-field;
+}
+
+.remove-button {
+  @apply mt-2 text-red-500 hover:text-red-600 transition-colors duration-200;
+}
+
+.bullet-point-row {
+  @apply flex items-start gap-2 relative;
+}
+
+.bullet-point-row:hover .remove-button {
+  opacity: 1;
+}
+
+.bullet-point-row .remove-button {
+  opacity: 0;
+}
+
+.bullet-point-row input {
+  @apply bg-gray-800 border-gray-700 text-white;
+}
+
+.bullet-point-row .remove-button {
+  @apply text-red-400 hover:text-red-300;
+}
+
+.skills-section {
+  @apply grid grid-cols-2 md:grid-cols-3 gap-8;
+}
+
+.skills-category {
+  @apply mb-6;
+}
+
+.skills-category h3 {
+  @apply text-sm font-semibold text-gray-900 mb-3;
+}
+
+.skills-list {
+  @apply flex flex-wrap gap-2;
+}
+
+.skill-item {
+  @apply px-3 py-1.5 text-sm bg-gray-100 text-gray-700 rounded-md;
+}
+
+.certifications-grid {
+  @apply grid grid-cols-1 md:grid-cols-2 gap-6;
+}
+
+.certification-item {
+  @apply p-4 rounded-lg border border-gray-200 hover:border-blue-200 transition-colors;
+}
+
+.certification-item h3 {
+  @apply font-medium text-gray-900 mb-2;
+}
+
+.certification-meta {
+  @apply text-sm text-gray-600 space-y-1;
+}
+
+.references-grid {
+  @apply grid grid-cols-1 md:grid-cols-2 gap-6;
+}
+
+.reference-item {
+  @apply p-4 rounded-lg border border-gray-200 hover:border-blue-200 transition-colors;
+}
+
+.reference-item h3 {
+  @apply font-medium text-gray-900 mb-1;
+}
+
+.reference-position {
+  @apply text-sm text-blue-600 mb-2;
+}
+
+.reference-company {
+  @apply text-sm text-gray-600 mb-3;
+}
+
+.reference-contact {
+  @apply space-y-1;
+}
+
+.reference-contact p {
+  @apply flex items-center gap-2 text-sm text-gray-600;
+}
+
+/* Print styles */
+@media print {
+  .resume-preview {
+    @apply p-8;
+  }
+  
+  .resume-header {
+    @apply mb-6 pb-4;
+  }
+  
+  .section-title {
+    @apply mb-4;
+  }
+  
+  .experience-item, .education-item {
+    @apply mb-6;
+  }
+  
+  .skills-section {
+    @apply gap-6;
+  }
+  
+  .certifications-grid, .references-grid {
+    @apply gap-4;
+  }
+}
+
+/* Layout styles */
+.main-container {
+  @apply flex min-h-[calc(100vh-4rem)] bg-gray-50 pt-16;
+}
+
+.app-container {
+  @apply min-h-screen relative overflow-hidden;
+  background: var(--gradient-background);
+  background-size: 400% 400%;
+  animation: gradientBg 15s ease infinite;
+}
+
+.content-wrapper {
+  @apply relative z-10;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+}
+
+.header-fixed {
+  @apply fixed top-0 left-0 right-0 z-50;
+  background: var(--gradient-light);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border-blue);
+  box-shadow: var(--shadow-sm);
+}
+
+.header-fixed h1 {
+  @apply text-gray-800;
+}
+
+.preview-section {
+  @apply w-1/2 fixed right-0 top-16 h-[calc(100vh-4rem)] overflow-y-auto;
+  background: var(--gradient-light);
+  backdrop-filter: blur(10px);
+  border-left: 2px solid transparent;
+  animation: borderGlow 3s ease-in-out infinite;
+}
+
+.form-section {
+  @apply w-1/2 min-h-[calc(100vh-4rem)] overflow-y-auto px-4 py-8;
+  background: rgba(255, 255, 255, 0.99);
+  color: #000000;
+}
+
+.form-section h2 {
+  font-weight: 600;
+  color: #000000;
+}
+
+.form-section label,
+.form-section .label-text {
+  color: #000000;
+  font-weight: 500;
+}
+
+.form-section input::placeholder,
+.form-section textarea::placeholder {
+  color: #333333;
+  font-weight: 500;
+}
+
+.form-section .text-gray-600,
+.form-section .text-gray-700,
+.form-section .text-gray-800,
+.form-section .text-gray-900 {
+  @apply text-gray-200;
+}
+
+.bullet-point-row span {
+  @apply text-white;
+}
+
+.section-title,
+.section h3,
+.section h4 {
+  color: #000000;
+}
+
+.experience-meta,
+.education-meta,
+.certification-meta {
+  color: #000000;
+  font-weight: 500;
+}
+
+.input-field,
+.form-section select,
+.form-section textarea {
+  @apply text-white placeholder-gray-400;
+}
+
+.input-field {
+  @apply bg-white border-gray-200 transition-all duration-300;
+  color: #000000;
+  font-weight: 500;
+  background: rgba(255, 255, 255, 0.99);
+}
+
+.input-field::placeholder {
+  color: #333333;
+  font-weight: 500;
+}
+
+/* Update button text colors */
+.btn-primary,
+.btn-secondary {
+  @apply text-white;
+}
+
+/* Update section text colors */
+.section {
+  @apply text-white;
+}
+
+/* Make error messages more visible */
+.error-message {
+  @apply text-red-300;
+}
+
+/* Update success messages */
+.success-message {
+  @apply text-green-300;
+}
+
+/* Update link colors */
+.form-section a {
+  @apply text-blue-300 hover:text-blue-200;
+}
+
+/* Keep the preview section text dark for better contrast */
+.preview-section {
+  color: var(--color-text-primary);
+}
+
+.preview-section h1,
+.preview-section h2,
+.preview-section h3,
+.preview-section h4,
+.preview-section p,
+.preview-section span {
+  color: inherit;
+}
+
+/* Modern UI Components */
+@layer components {
+  .glass-card {
+    @apply bg-white backdrop-blur-lg border border-white/30 rounded-xl 
+           shadow-lg hover:shadow-xl transition-all duration-300
+           hover:bg-white;
+  }
+
+  .timeline-item {
+    @apply relative pl-8 pb-8 border-l-2 border-gray-200 last:border-l-0 last:pb-0;
+  }
+
+  .timeline-dot {
+    @apply absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-blue-600
+           border-4 border-white shadow-md;
+  }
+
+  .auto-scroll-active {
+    animation: pulse-light 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse-light {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.7;
+    }
+  }
+
+  .loading-spinner {
+    @apply w-6 h-6 border-2 border-gray-200 border-t-blue-600 rounded-full animate-spin;
+  }
+
+  .floating-label {
+    @apply absolute left-3 -top-2.5 px-1 text-sm text-gray-600 bg-white transition-all duration-200;
+  }
+
+  .toast {
+    @apply fixed bottom-4 right-4 px-6 py-3 rounded-lg shadow-lg
+           bg-white text-gray-800 transform transition-all duration-300;
+  }
+
+  .toast-success {
+    @apply bg-green-500 text-white;
+  }
+
+  .toast-error {
+    @apply bg-red-500 text-white;
+  }
+
+  .hover-lift {
+    @apply transition-transform duration-300 hover:-translate-y-1 hover:shadow-lg;
+  }
+
+  .section-enter {
+    @apply opacity-0 transform translate-y-4;
+  }
+
+  .section-enter-active {
+    @apply opacity-100 transform translate-y-0 transition-all duration-300;
+  }
+
+  .social-link {
+    @apply p-2 rounded-full hover:bg-gray-100 transition-colors;
+  }
+
+  .social-link svg {
+    @apply text-gray-600 hover:text-gray-900;
+  }
+}
+
+/* Tooltip styles */
+.tooltip {
+  @apply relative inline-block;
+}
+
+.tooltip:hover::after {
+  content: attr(data-tooltip);
+  @apply absolute -bottom-8 left-1/2 transform -translate-x-1/2 
+         px-2 py-1 text-xs text-white bg-gray-900 rounded 
+         whitespace-nowrap z-50;
+}
+
+.tooltip:hover::before {
+  content: '';
+  @apply absolute -bottom-2 left-1/2 transform -translate-x-1/2 
+         border-solid border-4 border-transparent 
+         border-b-gray-900 z-50;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .contact-info {
+    @apply flex-col gap-3;
+  }
+  
+  .contact-info span {
+    display: none;
+  }
+}
+
+/* Update navigation */
+.nav-button {
+  @apply px-4 py-2 rounded-lg text-gray-600 transition-all duration-300;
+  background: var(--gradient-light);
+  color: var(--color-text-secondary);
+  font-weight: 600;
+  box-shadow: var(--shadow-sm);
+}
+
+.nav-button:hover {
+  background: var(--gradient-hover);
+  color: var(--color-primary);
+  box-shadow: var(--shadow-md);
+}
+
+.nav-button.active {
+  background: var(--gradient-primary);
+  color: var(--color-white);
+  font-weight: 700;
+  box-shadow: var(--shadow-lg);
+}
+
+.nav-button {
+  color: var(--color-text-secondary);
+}
+
+.nav-button:hover {
+  color: var(--color-primary);
+}
+
+.nav-button.active {
+  color: var(--color-white);
+}
+
+/* Update form inputs */
+.input-field {
+  @apply bg-white border-gray-200 transition-all duration-300;
+  color: #000000;
+  font-weight: 500;
+}
+
+.input-field::placeholder {
+  color: #333333;
+  font-weight: 500;
+}
+
+/* Update buttons */
+.btn-primary {
+  background: var(--gradient-primary);
+  color: var(--color-white);
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-sm);
+  font-weight: 600;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 100%);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-lg);
+}
+
+.btn-secondary {
+  background: var(--gradient-light);
+  color: var(--color-text-primary);
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-sm);
+  font-weight: 600;
+}
+
+.btn-secondary:hover {
+  background: var(--gradient-hover);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+/* All text elements darker */
+p, span, div {
+  color: #000000;
+}
+
+/* Additional text elements */
+.meta-text {
+  color: #000000;
+  font-weight: 600;
+}
+
+.description-text {
+  color: #000000;
+  font-weight: 500;
+}
+
+/* Preview section text */
+.preview-section {
+  color: #000000;
+  font-weight: 500;
+}
+
+.preview-section h1,
+.preview-section h2,
+.preview-section h3 {
+  color: #000000;
+  font-weight: 700;
+}
+
+/* Form section specific styles for left side */
+.form-section .section {
+  @apply mb-8 p-6 rounded-lg;
+  background: rgba(255, 255, 255, 0.99);
+}
+
+/* Education section */
+.education-section h3,
+.education-section label,
+.education-section input,
+.education-section .meta-text {
+  color: #000000;
+  font-weight: 600;
+}
+
+.education-meta {
+  color: #000000 !important;
+  font-weight: 600;
+}
+
+/* Skills section */
+.skills-section h3,
+.skills-section label,
+.skills-section input,
+.skills-section .meta-text {
+  color: #000000;
+  font-weight: 600;
+}
+
+.skill-item {
+  color: #000000;
+  font-weight: 600;
+}
+
+/* Certification section */
+.certification-section h3,
+.certification-section label,
+.certification-section input,
+.certification-section .meta-text {
+  color: #000000;
+  font-weight: 600;
+}
+
+.certification-meta {
+  color: #000000 !important;
+  font-weight: 600;
+}
+
+/* Reference section */
+.reference-section h3,
+.reference-section label,
+.reference-section input,
+.reference-section .meta-text {
+  color: #000000;
+  font-weight: 600;
+}
+
+/* Experience section */
+.experience-section h3,
+.experience-section label,
+.experience-section input,
+.experience-section .meta-text {
+  color: #000000;
+  font-weight: 600;
+}
+
+.experience-meta {
+  color: #000000 !important;
+  font-weight: 600;
+}
+
+/* Common form elements in left side */
+.form-section input,
+.form-section textarea,
+.form-section select {
+  color: #000000;
+  font-weight: 500;
+}
+
+.form-section label {
+  color: #000000;
+  font-weight: 600;
+}
+
+.form-section .section-title {
+  color: #000000;
+  font-weight: 700;
+}
+
+/* Make placeholder text darker */
+.form-section input::placeholder,
+.form-section textarea::placeholder {
+  color: #333333;
+  font-weight: 500;
+}
+
+/* Additional text elements in form sections */
+.form-section .description-text,
+.form-section .helper-text,
+.form-section .info-text {
+  color: #000000;
+  font-weight: 500;
+}
+
+/* Section headers in form */
+.form-section h2,
+.form-section h3,
+.form-section h4 {
+  color: #000000;
+  font-weight: 700;
+}
+
+/* Meta information in form */
+.form-section .meta-text,
+.form-section .date-text,
+.form-section .location-text {
+  color: #000000;
+  font-weight: 600;
+}
+
+/* Make all text inputs darker */
+.form-section .input-field {
+  color: #000000;
+  font-weight: 500;
+  background: rgba(255, 255, 255, 0.99);
+}
+
+/* Make ALL text elements in form-section (left side) black */
+.form-section * {
+  color: #000000 !important;
+}
+
+/* Headers with extra weight */
+.form-section h1,
+.form-section h2,
+.form-section h3,
+.form-section h4,
+.form-section h5,
+.form-section h6,
+.form-section .section-title {
+  color: #000000 !important;
+  font-weight: 700;
+}
+
+/* All text inputs and text areas */
+.form-section input,
+.form-section textarea,
+.form-section select,
+.form-section .input-field {
+  color: #000000 !important;
+  font-weight: 500;
+  background: rgba(255, 255, 255, 0.99);
+}
+
+/* All labels and descriptive text */
+.form-section label,
+.form-section .label-text,
+.form-section p,
+.form-section span,
+.form-section div,
+.form-section li,
+.form-section td,
+.form-section th,
+.form-section small,
+.form-section strong,
+.form-section em,
+.form-section b,
+.form-section i {
+  color: #000000 !important;
+  font-weight: 600;
+}
+
+/* Meta information and additional text */
+.form-section .meta-text,
+.form-section .helper-text,
+.form-section .info-text,
+.form-section .description-text,
+.form-section .date-text,
+.form-section .location-text,
+.form-section .experience-meta,
+.form-section .education-meta,
+.form-section .certification-meta,
+.form-section .skill-meta,
+.form-section .reference-meta {
+  color: #000000 !important;
+  font-weight: 600;
+}
+
+/* Buttons text in form section */
+.form-section button,
+.form-section .btn,
+.form-section .button {
+  font-weight: 600;
+}
+
+/* Placeholders slightly lighter but still dark */
+.form-section input::placeholder,
+.form-section textarea::placeholder {
+  color: #333333 !important;
+  font-weight: 500;
+}
+
+/* Lists and their items */
+.form-section ul,
+.form-section ol,
+.form-section li,
+.form-section .list-item {
+  color: #000000 !important;
+  font-weight: 500;
+}
+
+/* Any custom elements or classes */
+.form-section .custom-text,
+.form-section .field-text,
+.form-section .status-text,
+.form-section .error-text,
+.form-section .success-text,
+.form-section .warning-text {
+  color: #000000 !important;
+  font-weight: 500;
+}
+
+/* Section specific elements */
+.form-section .personal-info,
+.form-section .contact-info,
+.form-section .social-links,
+.form-section .work-history,
+.form-section .education-history,
+.form-section .skills-list,
+.form-section .certifications-list,
+.form-section .references-list {
+  color: #000000 !important;
+}
+
+/* Form controls and interactive elements */
+.form-section .form-control,
+.form-section .form-input,
+.form-section .form-select,
+.form-section .form-checkbox,
+.form-section .form-radio {
+  color: #000000 !important;
+}
+
+/* Make sure even dynamically added content is black */
+.form-section [class^="text-"],
+.form-section [class*=" text-"] {
+  color: #000000 !important;
+}
